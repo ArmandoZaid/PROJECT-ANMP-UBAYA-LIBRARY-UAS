@@ -7,4 +7,14 @@ interface CreateBookListener {
     fun onCreateBookClick(view: View, obj: Library)
 }
 
-interface DetailBookListener{}
+interface DetailBookListener{
+    fun onDetailBookListener(view: View)
+}
+
+interface UpdateBookListener{
+    fun onUpdateBookListener(view: View)
+}
+
+interface SaveUpdateBookListener {
+    fun onSaveUpdateBookListener(view: View, obj: Library)
+}
