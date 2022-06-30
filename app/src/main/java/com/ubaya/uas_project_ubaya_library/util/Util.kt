@@ -28,19 +28,21 @@ val MIGRATION_1_2 = object : Migration(1, 2) {
 @BindingAdapter("android:imageUrl", "android:progressBar")
 fun loadImageUrl(view: ImageView, url: String?, progressBar: ProgressBar){
     if(url != ""){
-        Picasso.get()
-            .load(url)
-            .centerCrop()
-            .error(R.drawable.ic_baseline_error_24)
-            .into(view, object : Callback {
-                override fun onSuccess() {
-                    progressBar.visibility = View.GONE
-                }
-                override fun onError(e: Exception?) {
-
-                }
-            })
+        view.loadImage(url, progressBar)
     }
 }
 
-//fun ImageView.loadImage(url: String)
+fun ImageView.loadImage(url: String?, progressBar: ProgressBar){
+    Picasso.get()
+        .load(url)
+        .resize(400, 400)
+        .centerCrop()
+        .error(R.drawable.ic_baseline_error_24)
+        .into(this, object : Callback {
+            override fun onSuccess() {
+                progressBar.visibility = View.GONE
+            }
+            override fun onError(e: Exception?) {
+            }
+        })
+}

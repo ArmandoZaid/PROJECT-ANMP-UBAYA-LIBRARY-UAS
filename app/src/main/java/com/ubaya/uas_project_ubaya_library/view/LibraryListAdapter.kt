@@ -28,7 +28,6 @@ class LibraryListAdapter (val bookList : ArrayList<Library>):
 
     override fun onBindViewHolder(holder: LibraryViewHolder, position: Int) {
         val book = bookList[position]
-
           holder.bind(book)
 //        holder.view.book = bookList[position]
     }

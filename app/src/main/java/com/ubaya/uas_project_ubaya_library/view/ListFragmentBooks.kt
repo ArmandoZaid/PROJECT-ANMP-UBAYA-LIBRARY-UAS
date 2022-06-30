@@ -39,6 +39,12 @@ class ListFragmentBooks : Fragment() {
             Navigation.findNavController(it).navigate(action)
         }
 
+        refreshLayout.setOnRefreshListener {
+            progressBarList.visibility
+            refreshLayout.isRefreshing = false
+            observeViewModel()
+        }
+
         observeViewModel()
     }
 
