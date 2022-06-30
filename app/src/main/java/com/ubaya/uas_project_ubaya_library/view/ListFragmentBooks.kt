@@ -45,7 +45,6 @@ class ListFragmentBooks : Fragment() {
     private fun observeViewModel() {
         viewModel.bookLD.observe(viewLifecycleOwner) {
             librarylistAdapter.updateBookList(it)
-
         }
     }
 

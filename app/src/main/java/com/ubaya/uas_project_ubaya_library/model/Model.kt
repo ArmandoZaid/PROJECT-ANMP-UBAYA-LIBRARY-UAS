@@ -13,8 +13,10 @@ data class Library(
     @ColumnInfo(name = "author")
     var author:String,
     @ColumnInfo(name = "rating")
-    var rating:Int
-) {
+    var rating:Int,
+    @ColumnInfo(name = "url")
+    var url:String
+    ) {
     @PrimaryKey(autoGenerate = true)
     var id:Int = 0
 }

@@ -36,14 +36,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:hint="Title"
+            android:hint="Book Title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textViewCreate"
             app:layout_constraintTop_toBottomOf="@+id/textViewCreate">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/createTitle"
-                android:text="Nama Buku"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -61,8 +60,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/createDescription"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nama Buku" />
+                android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -77,29 +75,33 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/createAuthor"
-                android:text="Nama Buku"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Image URL"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout3"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/createURL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
-
-        <EditText
-            android:id="@+id/createRating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:hint="Rating"
-            android:inputType="number"
-            android:text="5"
-            app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
-            tools:ignore="TouchTargetSizeCheck" />
 
         <Button
             android:id="@+id/buttonCreate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="300dp"
             android:onClick="@{(view)->createListener.onCreateBookClick(view, book)}"
@@ -109,7 +111,20 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/createRating"
-            app:layout_constraintVertical_bias="0.764" />
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/createRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Rating"
+            android:inputType="number"
+            android:text="5"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

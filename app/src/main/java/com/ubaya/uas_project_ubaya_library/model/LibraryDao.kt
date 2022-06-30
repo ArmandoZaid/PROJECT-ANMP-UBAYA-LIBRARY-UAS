@@ -14,8 +14,8 @@ interface LibraryDao {
     @Query("SELECT * FROM library WHERE id= :id")
     suspend fun selectLibrary(id:Int): Library
 
-    @Query( "UPDATE library SET title = :title, description =:description, author =:author, rating =:rating WHERE id = :id")
-    suspend fun update(id:Int, title:String,description:String, author:String, rating:Int)
+    @Query( "UPDATE library SET title = :title, description =:description, author =:author, rating =:rating, url =:url WHERE id = :id")
+    suspend fun update(id:Int, title:String,description:String, author:String, rating:Int, url:String)
 
     @Update
     suspend fun update(library: Library)
