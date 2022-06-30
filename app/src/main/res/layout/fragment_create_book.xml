@@ -24,8 +24,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="CREATE NEW BOOK"
+            android:text="INSERT NEW BOOK"
             android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,9 +60,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/createDescription"
-                android:text="Nama Buku"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="Nama Buku" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -85,7 +86,7 @@
             android:id="@+id/createRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:ems="10"
             android:hint="Rating"
             android:inputType="number"
@@ -100,12 +101,15 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="CREATE"
-            android:onClick = "@{(view)->createListener.onCreateBookClick(view, book)}"
+            android:layout_marginBottom="300dp"
+            android:onClick="@{(view)->createListener.onCreateBookClick(view, book)}"
+            android:text="INSERT"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createRating"
+            app:layout_constraintVertical_bias="0.764" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
