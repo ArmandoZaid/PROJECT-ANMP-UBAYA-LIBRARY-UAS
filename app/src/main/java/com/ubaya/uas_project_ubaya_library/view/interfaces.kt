@@ -4,7 +4,7 @@ import android.view.View
 import com.ubaya.uas_project_ubaya_library.model.Library
 
 interface CreateBookListener {
-    fun onCreateBookClick(view: View, obj: List<Library>)
+    fun onCreateBookClick(view: View, obj: Library)
 }
 
 interface DetailBookListener{}
