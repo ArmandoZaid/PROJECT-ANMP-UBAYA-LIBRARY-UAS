@@ -53,7 +53,7 @@ class createBookFragment : Fragment(), CreateBookListener {
             dataBinding.createAuthor.text.toString(), dataBinding.createRating.text.toString().toInt(), dataBinding.createURL.text.toString()))
 
         Log.d("Test Data Masuk", dataBinding.createTitle.text.toString());
-        viewModel.addTodo(book)
+        viewModel.addBook(book)
         Toast.makeText(view.context, "Todo updated", Toast.LENGTH_SHORT).show()
         Navigation.findNavController(view).popBackStack()
     }

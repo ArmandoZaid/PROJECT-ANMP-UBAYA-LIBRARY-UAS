@@ -20,10 +20,10 @@ AndroidViewModel(application), CoroutineScope{
     override val coroutineContext: CoroutineContext
         get() = job + Dispatchers.Main
 
-    fun addTodo(todoList: List<Library>){
+    fun addBook(bookList: List<Library>){
         launch {
             val db = buildDb(getApplication())
-            db.libraryDao().insertAll(*todoList.toTypedArray())
+            db.libraryDao().insertAll(*bookList.toTypedArray())
         }
     }
 }

@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.ubaya.uas_project_ubaya_library.view.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="Home Fragment"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/actionListFragmentBooks"
             app:destination="@id/listFragmentBooks"

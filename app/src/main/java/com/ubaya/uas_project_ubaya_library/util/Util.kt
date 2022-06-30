@@ -1,6 +1,7 @@
 package com.ubaya.uas_project_ubaya_library.util
 
 import android.content.Context
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
@@ -26,23 +27,21 @@ val MIGRATION_1_2 = object : Migration(1, 2) {
 }
 
 @BindingAdapter("android:imageUrl", "android:progressBar")
-fun loadImageUrl(view: ImageView, url: String?, progressBar: ProgressBar){
-    if(url != ""){
-        view.loadImage(url, progressBar)
-    }
-}
+fun loadImageUrl(view: ImageView, url: String?, progressBar: ProgressBar) {
+    if (url != "") {
+        Picasso.get()
+            .load(url)
+            .resize(400, 400)
+            .centerCrop()
+            .into(view, object : Callback {
+                override fun onSuccess() {
+                    progressBar.visibility = View.GONE
+                    Log.d("image muncul sukses", url.toString())
+                }
 
-fun ImageView.loadImage(url: String?, progressBar: ProgressBar){
-    Picasso.get()
-        .load(url)
-        .resize(400, 400)
-        .centerCrop()
-        .error(R.drawable.ic_baseline_error_24)
-        .into(this, object : Callback {
-            override fun onSuccess() {
-                progressBar.visibility = View.GONE
-            }
-            override fun onError(e: Exception?) {
-            }
-        })
+                override fun onError(e: Exception?) {
+                    Log.d("Error image tdk muncul", e.toString())
+                }
+            })
+    }
 }
