@@ -26,4 +26,18 @@ AndroidViewModel(application), CoroutineScope{
             db.libraryDao().insertAll(*todoList.toTypedArray())
         }
     }
+
+    fun fetch(id: Int){
+        launch {
+            val db = buildDb(getApplication())
+            bookLD.value = db.libraryDao().selectLibrary(id)
+        }
+    }
+
+    fun update(book: Library){
+        launch {
+            val db = buildDb(getApplication())
+            db.libraryDao().update(book)
+        }
+    }
 }

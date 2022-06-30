@@ -14,3 +14,7 @@ interface DetailBookListener{
 interface UpdateBookListener{
     fun onUpdateBookListener(view: View)
 }
+
+interface SaveUpdateBookListener {
+    fun onSaveUpdateBookListener(view: View, obj: Library)
+}
