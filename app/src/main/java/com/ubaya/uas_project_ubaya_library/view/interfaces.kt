@@ -6,3 +6,5 @@ import com.ubaya.uas_project_ubaya_library.model.Library
 interface CreateBookListener {
     fun onCreateBookClick(view: View, obj: List<Library>)
 }
+
+interface DetailBookListener{}
