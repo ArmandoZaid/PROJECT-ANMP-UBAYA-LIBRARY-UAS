@@ -20,7 +20,7 @@ abstract class LibraryDatabase:RoomDatabase() {
                 context.applicationContext,
                 LibraryDatabase::class.java,
                 "newlibrarydb"
-            ).addMigrations(MIGRATION_1_2).build()
+            ).addMigrations(MIGRATION_1_2).fallbackToDestructiveMigration().build()
 
         operator fun invoke(context: Context){
             if(instance != null) {

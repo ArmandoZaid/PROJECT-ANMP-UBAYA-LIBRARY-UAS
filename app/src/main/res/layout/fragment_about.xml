@@ -42,7 +42,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
         android:text="TENTANG PEMBUAT"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAbt"
-        tools:layout_editor_absoluteX="114dp" />
+        app:layout_constraintEnd_toEndOf="@+id/textViewAbt"
+        app:layout_constraintStart_toStartOf="@+id/textViewAbt"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAbt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

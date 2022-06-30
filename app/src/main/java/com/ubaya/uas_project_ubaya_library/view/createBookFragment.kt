@@ -40,7 +40,7 @@ class createBookFragment : Fragment(), CreateBookListener {
     }
 
     private fun observiewModel() {
-        dataBinding.book = Library( "","","",0)
+        dataBinding.book = Library( "","","",0, "")
         viewModel = ViewModelProvider(this).get(DetailBookViewModel::class.java)
     }
 
@@ -50,8 +50,9 @@ class createBookFragment : Fragment(), CreateBookListener {
     ){
         var list = listOf(obj)
         var book = listOf(Library( dataBinding.createTitle.text.toString(), dataBinding.createDescription.text.toString(),
-            dataBinding.createAuthor.text.toString(), dataBinding.createRating.text.toString().toInt()))
-        Log.d("sedfdsfd", dataBinding.createTitle.text.toString());
+            dataBinding.createAuthor.text.toString(), dataBinding.createRating.text.toString().toInt(), dataBinding.createURL.text.toString()))
+
+        Log.d("Test Data Masuk", dataBinding.createTitle.text.toString());
         viewModel.addTodo(book)
         Toast.makeText(view.context, "Todo updated", Toast.LENGTH_SHORT).show()
         Navigation.findNavController(view).popBackStack()

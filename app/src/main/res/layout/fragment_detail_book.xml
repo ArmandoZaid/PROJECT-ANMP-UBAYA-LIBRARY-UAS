@@ -20,7 +20,7 @@
             tools:context=".view.KostListDetailFragment">
 
             <ImageView
-                android:id="@+id/imageViewKostDetail"
+                android:id="@+id/imageViewBookDetail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
@@ -37,7 +37,7 @@
                 android:layout_marginTop="16dp"
                 android:text="Nama Buku :"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewKostDetail" />
+                app:layout_constraintTop_toBottomOf="@+id/imageViewBookDetail" />
 
             <TextView
                 android:id="@+id/textViewNameOfKost"
@@ -107,8 +107,8 @@
                 style="?android:attr/progressBarStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/imageViewKostDetail"
-                app:layout_constraintEnd_toEndOf="@+id/imageViewKostDetail"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewBookDetail"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewBookDetail"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -116,10 +116,11 @@
                 android:id="@+id/buttonUpt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
                 android:layout_marginTop="240dp"
                 android:text="UPDATE"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewKostDetail"
-                tools:layout_editor_absoluteX="95dp" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewBookDetail" />
 
             <Button
                 android:id="@+id/buttonDel"
@@ -129,7 +130,7 @@
                 android:layout_marginTop="240dp"
                 android:text="DELETE"
                 app:layout_constraintStart_toEndOf="@+id/buttonUpt"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewKostDetail" />
+                app:layout_constraintTop_toBottomOf="@+id/imageViewBookDetail" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
