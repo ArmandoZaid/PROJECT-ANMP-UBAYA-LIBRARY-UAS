@@ -70,7 +70,7 @@
         android:layout_height="90dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="16dp"
-        android:text="Tombol About, fungsi tombol ini dalah untuk melihat penjelasan tentang aplikasi buku ini."
+        android:text="Tombol About, fungsi tombol ini dalah untuk melihat penjelasan tentang aplikasi library ini."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView9"
         app:layout_constraintTop_toTopOf="@+id/imageView9" />

@@ -51,6 +51,10 @@ class ListFragmentBooks : Fragment() {
     private fun observeViewModel() {
         viewModel.bookLD.observe(viewLifecycleOwner) {
             librarylistAdapter.updateBookList(it)
+
+            if(it.isEmpty() == false){
+                progressBarList.visibility = View.GONE
+            }
         }
     }
 
