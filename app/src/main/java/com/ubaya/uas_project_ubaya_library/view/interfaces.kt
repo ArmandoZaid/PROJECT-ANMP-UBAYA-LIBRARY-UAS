@@ -10,3 +10,7 @@ interface CreateBookListener {
 interface DetailBookListener{
     fun onDetailBookListener(view: View)
 }
+
+interface UpdateBookListener{
+    fun onUpdateBookListener(view: View)
+}

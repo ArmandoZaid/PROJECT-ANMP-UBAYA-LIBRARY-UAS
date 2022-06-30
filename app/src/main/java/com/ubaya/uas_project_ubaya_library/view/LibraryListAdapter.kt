@@ -10,7 +10,7 @@ import com.ubaya.uas_project_ubaya_library.databinding.BooksItemLayoutBinding
 import com.ubaya.uas_project_ubaya_library.model.Library
 
 class LibraryListAdapter (val bookList : ArrayList<Library>):
-    RecyclerView.Adapter<LibraryListAdapter.LibraryViewHolder>(), DetailBookListener{
+    RecyclerView.Adapter<LibraryListAdapter.LibraryViewHolder>(), DetailBookListener, UpdateBookListener{
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LibraryViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -39,11 +39,19 @@ class LibraryListAdapter (val bookList : ArrayList<Library>):
         Navigation.findNavController(view).navigate(act)
     }
 
+
+
     class LibraryViewHolder (val binding: BooksItemLayoutBinding, val context: Context) :
         RecyclerView.ViewHolder(binding.root){
             fun bind(book : Library){
                 binding.book = book
             }
         }
+
+    override fun onUpdateBookListener(view: View) {
+        val id = view.tag.toString().toInt()
+        val act = DetailBookFragmentDirections.actionEditBookFragment(id)
+        Navigation.findNavController(view).navigate(act)
+    }
 
 }
