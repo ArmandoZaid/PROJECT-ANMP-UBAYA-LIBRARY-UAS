@@ -18,3 +18,7 @@ interface UpdateBookListener{
 interface SaveUpdateBookListener {
     fun onSaveUpdateBookListener(view: View, obj: Library)
 }
+
+interface DeleteBookListener{
+    fun onDeleteBookListener(view: View)
+}

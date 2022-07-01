@@ -10,6 +10,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ubaya.uas_project_ubaya_library.R
 import com.ubaya.uas_project_ubaya_library.viewModel.BookListViewModel
+import kotlinx.android.synthetic.main.books_item_layout.*
 import kotlinx.android.synthetic.main.fragment_list_books.*
 
 

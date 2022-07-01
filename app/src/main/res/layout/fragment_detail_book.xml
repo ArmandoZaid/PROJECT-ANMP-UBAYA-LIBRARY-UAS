@@ -7,10 +7,6 @@
             <variable
                 name="book"
                 type="com.ubaya.uas_project_ubaya_library.model.Library" />
-
-            <variable
-                name="editListener"
-                type="com.ubaya.uas_project_ubaya_library.view.UpdateBookListener" />
     </data>
 
     <FrameLayout
@@ -35,8 +31,11 @@
                     android:id="@+id/imageViewBookDetail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:imageUrl="@{book.url}"
+                    android:progressBar="@{progressBarPhotoDetail}"
                     android:scaleType="centerCrop"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:src="@tools:sample/avatars" />
@@ -56,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Nama"
+                    android:text="@={book.title}"
                     app:layout_constraintStart_toEndOf="@+id/textViewNameKost"
                     app:layout_constraintTop_toTopOf="@+id/textViewNameKost" />
 
@@ -74,7 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="AAAA"
+                    android:text="@={book.description}"
                     app:layout_constraintStart_toEndOf="@+id/textView4"
                     app:layout_constraintTop_toTopOf="@+id/textView4" />
 
@@ -92,7 +91,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="-"
+                    android:text="@={book.author}"
                     app:layout_constraintStart_toEndOf="@+id/textView6"
                     app:layout_constraintTop_toTopOf="@+id/textView6" />
 
@@ -110,7 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="-"
+                    android:text="@{Integer.valueOf(book.rating).toString()}"
                     app:layout_constraintStart_toEndOf="@+id/textView8"
                     app:layout_constraintTop_toTopOf="@+id/textView8" />
 
@@ -124,27 +123,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <Button
-                    android:id="@+id/buttonUpdate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="240dp"
-                    android:text="UPDATE"
-                    android:tag="@{book.id}"
-                    android:onClick="@{editListener::onUpdateBookListener"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageViewBookDetail" />
-
-                <Button
-                    android:id="@+id/buttonDeleted"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginTop="240dp"
-                    android:text="DELETE"
-                    app:layout_constraintStart_toEndOf="@+id/buttonUpdate"
-                    app:layout_constraintTop_toBottomOf="@+id/imageViewBookDetail" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </FrameLayout>

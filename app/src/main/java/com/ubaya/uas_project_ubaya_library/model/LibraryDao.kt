@@ -21,6 +21,6 @@ interface LibraryDao {
     suspend fun update(library: Library)
 
     @Delete
-    suspend fun deleteTodo(library: Library)
+    suspend fun delete(library: Library)
 
 }
