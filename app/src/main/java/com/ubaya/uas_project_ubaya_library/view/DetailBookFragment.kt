@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.ubaya.uas_project_ubaya_library.R
 import com.ubaya.uas_project_ubaya_library.databinding.FragmentDetailBookBinding
@@ -31,6 +32,15 @@ class DetailBookFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(DetailBookViewModel::class.java)
         val id = DetailBookFragmentArgs.fromBundle(requireArguments()).id
         viewModel.fetch(id)
+
+        observeViewModel()
+    }
+
+    private fun observeViewModel() {
+        viewModel.bookLD.observe(viewLifecycleOwner, Observer {
+
+            dataBinding.book = it
+        })
     }
 
 

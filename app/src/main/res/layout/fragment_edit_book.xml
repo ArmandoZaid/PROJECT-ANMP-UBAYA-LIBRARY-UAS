@@ -69,7 +69,7 @@
                     android:id="@+id/updateDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@={book.description"
+                    android:text="@={book.description}"
                     tools:ignore="TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,30 +95,44 @@
                 android:id="@+id/updateRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:ems="10"
                 android:hint="Rating"
                 android:inputType="number"
-                android:text="@{book.rating, default = 0}"
+                android:text="@{Integer.valueOf(book.rating).toString()}"
                 app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/buttonUpdate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="300dp"
+                android:onClick="@{(view) -> saveUpdateListener.onSaveUpdateBookListener(view, book)}"
                 android:text="SAVE UPDATE"
-                android:onClick="@{(view) -> saveUpdateListener.onSaveUpdateBookListener(view, book)"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/updateRating"
-                app:layout_constraintVertical_bias="0.764" />
+                app:layout_constraintStart_toStartOf="@+id/updateRating"
+                app:layout_constraintTop_toBottomOf="@+id/updateRating" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout3"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updateURL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={book.url}"
+                    android:hint="URL" />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

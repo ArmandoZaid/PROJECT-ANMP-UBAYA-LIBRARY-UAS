@@ -40,4 +40,11 @@ AndroidViewModel(application), CoroutineScope{
             db.libraryDao().update(book)
         }
     }
+
+    fun clearRow(book: Library) {
+        launch {
+            val db = buildDb(getApplication())
+            db.libraryDao().delete(book)
+        }
+    }
 }

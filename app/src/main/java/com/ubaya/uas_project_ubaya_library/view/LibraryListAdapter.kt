@@ -7,10 +7,14 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.ubaya.uas_project_ubaya_library.databinding.BooksItemLayoutBinding
+import com.ubaya.uas_project_ubaya_library.databinding.FragmentCreateBookBinding
 import com.ubaya.uas_project_ubaya_library.model.Library
+import com.ubaya.uas_project_ubaya_library.viewModel.DetailBookViewModel
 
 class LibraryListAdapter (val bookList : ArrayList<Library>):
-    RecyclerView.Adapter<LibraryListAdapter.LibraryViewHolder>(), DetailBookListener, UpdateBookListener{
+    RecyclerView.Adapter<LibraryListAdapter.LibraryViewHolder>(), DetailBookListener, UpdateBookListener, DeleteBookListener{
+
+    private lateinit var viewModel : DetailBookViewModel
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LibraryViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -19,15 +23,17 @@ class LibraryListAdapter (val bookList : ArrayList<Library>):
         return LibraryViewHolder(view, parent.context )
     }
 
-    fun updateBookList(newTodoList: List<Library>) {
+    fun updateBookList(newBookList: List<Library>) {
         bookList.clear()
-        bookList.addAll(newTodoList)
+        bookList.addAll(newBookList)
         notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: LibraryViewHolder, position: Int) {
         val book = bookList[position]
           holder.bind(book)
+        holder.binding.detailListener = this
+        holder.binding.updateListener = this
 //        holder.view.book = bookList[position]
     }
 
@@ -50,8 +56,13 @@ class LibraryListAdapter (val bookList : ArrayList<Library>):
 
     override fun onUpdateBookListener(view: View) {
         val id = view.tag.toString().toInt()
-        val act = DetailBookFragmentDirections.actionEditBookFragment(id)
+        val act = ListFragmentBooksDirections.actionEditBookFragment(id)
         Navigation.findNavController(view).navigate(act)
+    }
+
+    override fun onDeleteBookListener(view: View){
+        val id = view.tag.toString().toInt()
+        viewModel.clearRow(bookList[id])
     }
 
 }

@@ -31,6 +31,9 @@
             app:destination="@id/createBookFragment"
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/actionEditBookFragment"
+            app:destination="@id/editBookFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailBookFragment"
@@ -39,11 +42,6 @@
         <argument
             android:name="id"
             app:argType="integer" />
-        <action
-            android:id="@+id/actionEditBookFragment"
-            app:destination="@id/editBookFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/createBookFragment"
@@ -52,8 +50,7 @@
     <fragment
         android:id="@+id/editBookFragment"
         android:name="com.ubaya.uas_project_ubaya_library.view.editBookFragment"
-        android:label="fragment_edit_book"
-        tools:layout="@layout/fragment_edit_book" >
+        android:label="editBookFragment" >
         <argument
             android:name="id"
             app:argType="integer" />

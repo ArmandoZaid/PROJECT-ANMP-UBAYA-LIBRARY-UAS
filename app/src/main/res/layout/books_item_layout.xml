@@ -10,6 +10,14 @@
             <variable
                 name="detailListener"
                 type="com.ubaya.uas_project_ubaya_library.view.DetailBookListener" />
+
+            <variable
+                name="updateListener"
+                type="com.ubaya.uas_project_ubaya_library.view.UpdateBookListener" />
+
+        <variable
+            name="deleteListener"
+            type="com.ubaya.uas_project_ubaya_library.view.DeleteBookListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -51,6 +59,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:text="@={book.title, default = judul}"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/imageViewBookItem"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="judul buku" />
@@ -77,6 +87,29 @@
                     app:layout_constraintEnd_toEndOf="@+id/imageViewBookItem"
                     app:layout_constraintStart_toStartOf="@+id/imageViewBookItem"
                     app:layout_constraintTop_toTopOf="@+id/imageViewBookItem" />
+
+                <Button
+                    android:id="@+id/buttonToUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="update"
+                    android:tag="@{book.id}"
+                    android:onClick="@{updateListener::onUpdateBookListener}"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonDetail"
+                    app:layout_constraintTop_toTopOf="@+id/buttonDetail" />
+
+                <Button
+                    android:id="@+id/buttonDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#B30808"
+                    android:text="Delete"
+                    android:tag="@{book.id}"
+                    android:onClick="@{deleteListener::onDeleteBookListener}"
+                    app:iconTint="#673AB7"
+                    app:layout_constraintEnd_toEndOf="@+id/buttonDetail"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonDetail" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
