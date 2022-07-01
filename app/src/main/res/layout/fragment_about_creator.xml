@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.AboutFragment">
+    tools:context=".view.AboutCreatorFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -15,7 +15,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="sans-serif-condensed"
         android:text="About Creator"
-        android:textSize="40sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,17 +23,65 @@
 
     <TextView
         android:id="@+id/textViewAbt"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="24dp"
-        android:text="Aplikasi ini dibuat oleh 3 mahasiswa teknik informatika UBAYA"
+        android:layout_marginEnd="16dp"
+        android:text="Aplikasi ini dibuat oleh 3 mahasiswa Teknik Informatika Universitas Surabaya. Naufal Muflih Ramadhan (160419128), Armando Diaz (160419114), Azriel Rizky Wibisono (160419111)"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textAbt" />
+
+    <TextView
+        android:id="@+id/textViewAbt3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Armando Diaz (160419114"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAbt2" />
+
+    <TextView
+        android:id="@+id/textViewAbt4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Naufal Muflih Ramadhan (160419128"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAbt3" />
+
+    <TextView
+        android:id="@+id/textViewAbt2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Azriel Rizky Wibisono (160419111)"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAbt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
