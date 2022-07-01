@@ -3,29 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_main"
-    app:startDestination="@id/homeFragment">
+    android:label="Menu Utama"
+    app:startDestination="@id/itemHome">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/itemHome"
         android:name="com.ubaya.uas_project_ubaya_library.view.HomeFragment"
-        android:label="Home Fragment"
+        android:label="Halaman Awal"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/actionListFragmentBooks"
-            app:destination="@id/listFragmentBooks"
+            app:destination="@id/itemList"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
-        android:id="@+id/listFragmentBooks"
+        android:id="@+id/itemList"
         android:name="com.ubaya.uas_project_ubaya_library.view.ListFragmentBooks"
-        android:label="fragment_list_books"
-        tools:layout="@layout/fragment_list_books" >
+        android:label="Daftar Buku"
+        tools:layout="@layout/fragment_list_books">
         <action
             android:id="@+id/actionDetailBookFragment"
-            app:destination="@id/detailBookFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
+            app:destination="@id/itemDetail" />
         <action
             android:id="@+id/actionCreateBookFragment"
             app:destination="@id/createBookFragment"
@@ -36,9 +35,9 @@
             app:destination="@id/editBookFragment" />
     </fragment>
     <fragment
-        android:id="@+id/detailBookFragment"
+        android:id="@+id/itemDetail"
         android:name="com.ubaya.uas_project_ubaya_library.view.DetailBookFragment"
-        android:label="DetailBookFragment" >
+        android:label="Detail Buku">
         <argument
             android:name="id"
             app:argType="integer" />
@@ -46,13 +45,31 @@
     <fragment
         android:id="@+id/createBookFragment"
         android:name="com.ubaya.uas_project_ubaya_library.view.createBookFragment"
-        android:label="createBookFragment" />
+        android:label="Tambah Buku" />
     <fragment
         android:id="@+id/editBookFragment"
         android:name="com.ubaya.uas_project_ubaya_library.view.editBookFragment"
-        android:label="editBookFragment" >
+        android:label="Edit Buku">
         <argument
             android:name="id"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/itemHelp"
+        android:name="com.ubaya.uas_project_ubaya_library.view.HelpFragment"
+        android:label="Bantuan"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/itemAbout"
+        android:name="com.ubaya.uas_project_ubaya_library.view.AboutFragment"
+        android:label="Tentang Aplikasi"
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/actionAboutCreator"
+            app:destination="@id/aboutCreatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutCreatorFragment"
+        android:name="com.ubaya.uas_project_ubaya_library.view.AboutCreatorFragment"
+        android:label="Tentang Pembuat" />
 </navigation>
